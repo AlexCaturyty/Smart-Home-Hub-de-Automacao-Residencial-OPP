@@ -12,18 +12,16 @@ class Colors(Enum):
 
 class Ligth():
     def __init__(self):
-        self.on = False
-        self.off = True
         self.brightness = 0
         self.color = Colors.NEUTRA
 
     def turn_on_light(self):
-        if self.on:
+        if self.state == StateLight.ON:
             return False
         return True
 
     def turn_off_light(self):
-        if self.off:
+        if self.state == StateLight.OFF:
             return False
         return True
 
@@ -52,31 +50,30 @@ class Ligth():
             self.brightness = valor
             print(f">> Brilho definido para {self.brightness}%.")
 
-    def on_enter_ON(self, *args, **kwargs):
-        if not self.on: 
+    def on_enter_ON(self, *args, **kargs):
+        if self.state == StateLight.ON and self.brightness == 0:  
             print(">> A luz acendeu")
-        self.on = True
-        self.off = False
+
+
 
     def on_enter_OFF(self):
-        self.on = False
-        self.off = True
         print('>> A luz apagou')
 
 transitions = [
-    {'trigger' : 'ligar', 'source' : StateLight.OFF, 'dest': StateLight.ON, 'conditions' : 'turn_on_light'},
-    {'trigger' : 'desligar', 'source' : StateLight.ON, 'dest': StateLight.OFF},
-    {'trigger' : 'definir_brightness', 'source' : StateLight.ON, 'dest' : StateLight.ON, 'before': 'set_brightness'},
-    {"trigger": "definir_color", "source": StateLight.ON, 'dest' : StateLight.ON, "before": "apply_color"},
-
+    {'trigger': 'on', 'source': StateLight.OFF, 'dest': StateLight.ON, 'conditions': 'turn_on_light'},
+    {'trigger': 'off', 'source': StateLight.ON, 'dest': StateLight.OFF},
+    {'trigger': 'set_brightness','source': StateLight.ON,'dest': StateLight.ON,'before': 'set_brightness'},
+    {"trigger": "set_color", "source": StateLight.ON,'dest': StateLight.ON,"before": "apply_color"},
 ] 
+
 
 
 l = Ligth()
 machine = Machine(model=l, states=StateLight,transitions=transitions, initial=StateLight.OFF, auto_transitions=False)
 if __name__ == '__main__':
     print("Estado inicial:", l.state)
-    l.ligar() 
-    l.definir_brightness(50)   
-    l.definir_color("fria")
-    l.desligar()
+    l.on() 
+    l.set_brightness(50)   
+    l.set_color("fria")
+    l.set_brightness(100) 
+    l.off()
