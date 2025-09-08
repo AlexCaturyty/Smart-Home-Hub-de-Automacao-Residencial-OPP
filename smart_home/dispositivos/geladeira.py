@@ -2,8 +2,10 @@ from transitions import Machine
 from enum import Enum, auto
 
 class StatesFreeze(Enum):
-    Open_Door = auto()
-    Closed_Door = auto()
+    OPEN_DOOR = auto()
+    CLOSED_DOOR = auto()
+    ON = auto()
+    OFF = auto()
 
 class Mode(Enum):
     ECO = 'eco'
@@ -32,34 +34,43 @@ class Freeze:
                 novo_mode = Mode[mode]
                 if novo_mode != self.mode:
                     self.mode = novo_mode
-                    print(f'>> O mode de energia foi alterado para {self.mode.value}')
+                    print(f'>> O modo de energia foi alterado para {self.mode.value}')
                 else:
-                    print(f'>> O mode já está em {self.mode.value}')
+                    print(f'>> O modo já está em {self.mode.value}')
             else:
                 print(f'>> Modo inválido: {mode}')
         else:
             print(">> Tipo inválido de mode")
                 
-    def on_enter_Open_Door(self, *args, **kwargs):
+    def on_enter_OPEN_DOOR(self, *args, **kwargs):
         print('>> A geladeira foi aberta')
     
-    def on_enter_Closed_Door(self, *args, **kwargs):
+    def on_enter_CLOSED_DOOR(self, *args, **kwargs):
         print(">> Geladeira fechada")
+    
+    def on_enter_ON(self):
+        print('>> Geladeira ligada')
+    
+    def on_enter_OFF(self):
+        print('>> Geladeira desligada')
+
     
 
 transitions = [
-    {'trigger': 'close_door', 'source': StatesFreeze.Open_Door, 'dest': StatesFreeze.Closed_Door},
-    {'trigger': 'open_door', 'source': StatesFreeze.Closed_Door, 'dest': StatesFreeze.Open_Door},
-    {'trigger': 'adjust_temperature', 'source': StatesFreeze.Closed_Door, 'dest': StatesFreeze.Closed_Door, 'before': 'check_temperature'},
-    {'trigger': 'switch_mode', 'source': StatesFreeze.Closed_Door, 'dest': StatesFreeze.Closed_Door, 'before': 'change_mode'}
+    {'trigger' : 'on' , 'source': StatesFreeze.OFF, 'dest' : StatesFreeze.ON},
+    {'trigger': 'close_door', 'source': StatesFreeze.OPEN_DOOR, 'dest': StatesFreeze.CLOSED_DOOR},
+    {'trigger': 'open_door', 'source': [StatesFreeze.CLOSED_DOOR, StatesFreeze.ON], 'dest': StatesFreeze.OPEN_DOOR, },
+    {'trigger': 'adjust_temperature', 'source': StatesFreeze.CLOSED_DOOR, 'dest': None, 'before': 'check_temperature'},
+    {'trigger': 'switch_mode', 'source': StatesFreeze.CLOSED_DOOR, 'dest': None, 'before': 'change_mode'}
 ]
 
 f = Freeze()
-machine = Machine(model=f, states=StatesFreeze, transitions=transitions, initial=StatesFreeze.Closed_Door, auto_transitions=False)
+machine = Machine(model=f, states=StatesFreeze, transitions=transitions, initial=StatesFreeze.OFF, auto_transitions=False)
 
 
 if __name__ == '__main__':
     print("Estado inicial:", f.state)
+    f.on()
     f.open_door()
     f.close_door()
     f.adjust_temperature(2)
