@@ -1,7 +1,8 @@
 from transitions import Machine
 from enum import Enum, auto
+from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
 
-class StateLight(Enum):
+class StateLigth(Enum):
     OFF = auto()
     ON = auto()
 
@@ -10,70 +11,60 @@ class Colors(Enum):
     FRIA = "fria"
     NEUTRA = "neutra"
 
-class Ligth():
-    def __init__(self):
-        self.brightness = 0
-        self.color = Colors.NEUTRA
+class Ligth(Dispositivo):
+    def __init__(self, id_: str, nome: str):
+        super().__init__(id_, nome, TipoDispositivo.LUZ)
+        self._brightness = 0
+        self._color = Colors.NEUTRA
 
-    def turn_on_light(self):
-        if self.state == StateLight.ON:
-            return False
-        return True
+        # Definição da máquina de estados
+        self.machine = Machine(model=self, states=StateLigth, transitions=[
+            {'trigger': 'ligar', 'source': StateLigth.OFF, 'dest': StateLigth.ON},
+            {'trigger': 'desligar', 'source': StateLigth.ON, 'dest': StateLigth.OFF}
+        ], initial=StateLigth.OFF, auto_transitions=False)
 
-    def turn_off_light(self):
-        if self.state == StateLight.OFF:
-            return False
-        return True
+          # -------- Implementações da ABC Dispositivo --------
+    def ligar(self):
+        self.trigger("ligar")
 
-    def validate_brightness(self, valor):
-        if valor <= 100 and valor >= 0:
-            return True
-        print(f">> Brilho inválido: {valor}. Deve estar entre 0 e 100.")
-        return False
-    
-    def apply_color(self, color):
-        if isinstance(color, str):
-            color = color.upper()
-            if color in Colors.__members__:
-                self.color = Colors[color]
-                print(f">> Cor definida para {self.color.value.upper()}")
-            else:
-                print(f">> Cor inválida: {color}")
-        elif isinstance(color, Colors):
-            self.color = color
-            print(f">> Cor definida para {self.color.value.upper()}")
+    def desligar(self):
+        self.trigger("desligar")
+
+    @property
+    def brightness(self):
+        return self._brightness
+
+    @brightness.setter
+    def brightness(self, valor):
+        if 0 <= valor <= 100:
+            self._brightness = valor
+            print(f">> Brilho definido para {self._brightness}%.")
         else:
-            print(">> Tipo inválido de cor")
-    
-    def set_brightness(self, valor):
-        if self.validate_brightness(valor):
-            self.brightness = valor
-            print(f">> Brilho definido para {self.brightness}%.")
+            print(f">> Brilho inválido: {valor}. Deve estar entre 0 e 100.")
 
-    def on_enter_ON(self, *args, **kargs):
-        if self.state == StateLight.ON and self.brightness == 0:  
-            print(">> A luz acendeu")
+    @property
+    def color(self):
+        return self._color
 
+    @color.setter
+    def color(self, value):
+        if isinstance(value, Colors):
+            self._color = value
+            print(f">> Cor definida para {self._color.value.upper()}")
+        elif isinstance(value, str) and value.upper() in Colors.__members__:
+            self._color = Colors[value.upper()]
+            print(f">> Cor definida para {self._color.value.upper()}")
+        else:
+            print(f">> Cor inválida: {value}")
 
+    def on_enter_ON(self):
+        print(">> A luz foi ligada.")
 
     def on_enter_OFF(self):
-        print('>> A luz apagou')
+        print(">> A luz foi desligada.")
 
-transitions = [
-    {'trigger': 'on', 'source': StateLight.OFF, 'dest': StateLight.ON, 'conditions': 'turn_on_light'},
-    {'trigger': 'off', 'source': StateLight.ON, 'dest': StateLight.OFF},
-    {'trigger': 'set_brightness','source': StateLight.ON,'dest': StateLight.ON,'before': 'set_brightness'},
-    {"trigger": "set_color", "source": StateLight.ON,'dest': StateLight.ON,"before": "apply_color"},
-] 
+    
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Brilho: {self._brightness}% | Cor: {self._color.value}"
 
 
-
-l = Ligth()
-machine = Machine(model=l, states=StateLight,transitions=transitions, initial=StateLight.OFF, auto_transitions=False)
-if __name__ == '__main__':
-    print("Estado inicial:", l.state)
-    l.on() 
-    l.set_brightness(50)   
-    l.set_color("fria")
-    l.set_brightness(100) 
-    l.off()

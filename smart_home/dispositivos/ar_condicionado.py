@@ -1,72 +1,52 @@
 from transitions import Machine
 from enum import Enum, auto
+from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
 
 class StatesAirConditioner(Enum):
     ON = auto()
     OFF = auto()
-    COOL = auto()
-    WARM = auto()
 
 class AirConditionerMODE(Enum):
     QUENTE = 'quente'
     FRIO = 'frio'
 
-class AirConditioner:
-    def __init__(self):
+class AirConditioner(Dispositivo):
+    def __init__(self, id_: str, nome: str):
+        super().__init__(id_, nome, TipoDispositivo.ARCONDICIONADO)
         self.temperature = 16
         self.mode = AirConditionerMODE.FRIO
+
+        self.machine = Machine(model=self, states=StatesAirConditioner, transitions=[
+            {'trigger': 'ligar', 'source': StatesAirConditioner.OFF, 'dest': StatesAirConditioner.ON},
+            {'trigger': 'desligar', 'source': StatesAirConditioner.ON, 'dest': StatesAirConditioner.OFF},
+            {'trigger': 'ajustar_temperatura', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'check_temperature'},
+            {'trigger': 'mudar_modo', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'change_mode'}
+        ], initial=StatesAirConditioner.OFF, auto_transitions=False)
+
+    def ligar(self):
+        self.trigger("ligar")
+
+    def desligar(self):
+        self.trigger("desligar")
         
-    def check_temperature(self, temperature):
-        if 16 <= temperature <= 30:
-            if temperature != self.temperature:
-                self.temperature = temperature
-                print(f'>> Temperatura foi alterada para {self.temperature}°C')
-            else:
-                print(f'>> Temperatura já está em {self.temperature}°C')
-            return True
-        print('>> O Ar condicionado só aceita temperatures entre 16°C e 30°C')
-        return False
-    
-    def change_mode (self, mode):
-        if isinstance(mode, str):
-            mode = mode.upper()
-            if mode in AirConditionerMODE.__members__:
-                novo_mode = AirConditionerMODE[mode]
-                if novo_mode != self.mode:
-                    self.mode = novo_mode
-                    print(f'>> O modo foi alterado para {self.mode.value}')
-                else:
-                    print(f'>> O modo já está em {self.mode.value}')
-            else:
-                print(f'>> Modo inválido: {mode}')
+    def check_temperature(self, t):
+        if 16 <= t <= 30:
+            self.temperature = t
+            print(f">> Temperatura ajustada: {t}°C")
         else:
-            print(">> Tipo inválido de modo")
-                
-    def on_enter_WARM(self, *args, **kwargs):
-        print('>> Modo frio ativado!')
-    
+            print(">> Temperatura inválida (16–30°C)")
+
+    def change_mode(self, mode):
+        try:
+            self.mode = AirConditionerMODE[mode.upper()]
+            print(f">> Modo alterado: {self.mode.value}")
+        except KeyError:
+            print(">> Modo inválido (FRIO/QUENTE)")
+
     def on_enter_ON(self):
-        print('>> Ar-Condicionado ligado')
-    
-    def on_enter_OFF(self):
-        print('>> Ar-Condicionado desligado')
+        print(">> Ar-condicionado ligado.")
+    def on_enter_OFF(self): 
+        print(">> Ar-condicionado desligado.")
 
-transitions = [
-    {'trigger' : 'on' , 'source': StatesAirConditioner.OFF, 'dest' : StatesAirConditioner.ON},
-    {'trigger' : 'off' , 'source': StatesAirConditioner.ON, 'dest' : StatesAirConditioner.OFF},
-    {'trigger': 'adjust_temperature', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'check_temperature'},
-    {'trigger': 'switch_mode', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'change_mode'}
-]
-
-a = AirConditioner()
-machine = Machine(model=a, states=StatesAirConditioner, transitions=transitions, initial=StatesAirConditioner.OFF, auto_transitions=False)
-
-if __name__ == '__main__':
-    print("Estado inicial:", a.state)
-    a.on()
-    a.adjust_temperature(2)
-    a.adjust_temperature(23)
-    a.switch_mode("TURBO")  
-    a.switch_mode("FRIO")
-    a.switch_mode('QUENTE')
-    a.off() 
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"

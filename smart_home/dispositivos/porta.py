@@ -1,75 +1,44 @@
 from transitions import Machine
 from enum import Enum, auto
+from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
 
 class StatePort(Enum):
     LOCKED = auto()
     UNLOCKED = auto()
     OPEN = auto()
 
-class Port:
-    def __init__(self):
-        self.invalid_attempts = 0  
+class Port(Dispositivo):
+    def __init__(self, id_: str, nome: str):
+        super().__init__(id_, nome, TipoDispositivo.PORTA)
+        self.invalid_attempts = 0
+
+        self.machine = Machine(model=self, states=StatePort, transitions=[
+            {'trigger': 'destrancar', 'source': StatePort.LOCKED, 'dest': StatePort.UNLOCKED},
+            {'trigger': 'trancar', 'source': StatePort.UNLOCKED, 'dest': StatePort.LOCKED, 'conditions': 'can_lock'},
+            {'trigger': 'abrir', 'source': StatePort.UNLOCKED, 'dest': StatePort.OPEN},
+            {'trigger': 'fechar', 'source': StatePort.OPEN, 'dest': StatePort.UNLOCKED, 'conditions': 'may_close'}
+        ], initial=StatePort.LOCKED, auto_transitions=False)
 
     def can_lock(self):
         if self.state == StatePort.OPEN:
-            print(">> Não é possível trancar a porta pois está aberta.")
-            return False
-        return True
-
-    def can_open(self):
-        if self.state == StatePort.OPEN:
-            print(">> A porta já está aberta.")
-            return False
-        if self.state == StatePort.LOCKED:
-            print(">> A porta está trancada, não pode abrir.")
-            return False
-        return True
-
-    def increment_exception(self):
-        if self.state == StatePort.OPEN:
+            print(">> Não pode trancar porta aberta!")
             self.invalid_attempts += 1
-        
+            return False
+        return True
 
-    def may_close(self):
-        if self.state == StatePort.OPEN:
-            return True
-        print(">> A porta já está fechada.")
-        return False
+    def may_close(self): return self.state == StatePort.OPEN
 
-    def on_enter_LOCKED(self):
+    def on_enter_LOCKED(self): print(">> Porta trancada.")
+    def on_enter_UNLOCKED(self): print(">> Porta destrancada e fechada.")
+    def on_enter_OPEN(self): print(">> Porta aberta.")
 
-        print(">> Porta TRANCADA.")
+    def ligar(self): 
+        self.abrir()
+    
+    def desligar(self): 
+        self.fechar()
 
-    def on_enter_UNLOCKED(self):
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Tentativas inválidas: {self.invalid_attempts}"
 
-        print(">> Porta DESTRANCADA e FECHADA!")
 
-    def on_enter_OPEN(self):
-        if self.state == StatePort.OPEN:
-            print(">> Porta ABERTA.")
- 
-       
-
-transitions = [
-    {'trigger': 'destrancar', 'source': StatePort.LOCKED, 'dest': StatePort.UNLOCKED},
-    {'trigger': 'trancar',    'source': StatePort.UNLOCKED, 'dest': StatePort.LOCKED, 'conditions': 'can_lock'},
-    {'trigger': 'abrir',      'source': StatePort.UNLOCKED, 'dest': StatePort.OPEN},
-    {'trigger': 'fechar',     'source': StatePort.OPEN,      'dest': StatePort.UNLOCKED, 'conditions': 'may_close'},
-
-]
-
-p = Port()
-machine = Machine(model=p, states=StatePort, transitions=transitions, initial=StatePort.LOCKED, auto_transitions=False, on_exception= 'increment_exception')
-
-if __name__ == '__main__':
-    print("Estado inicial:", p.state)
-    p.destrancar()
-    p.destrancar()
-    p.abrir()
-    print(f'1{p.state}')      
-    p.trancar()   
-    print(f'2{p.state}')     
-    p.fechar()
-    print(f'3{p.state}')     
-    p.trancar()   
-    print("Tentativas inválidas:", p.invalid_attempts)

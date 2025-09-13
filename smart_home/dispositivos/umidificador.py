@@ -1,33 +1,45 @@
 from transitions import Machine
 from enum import Enum, auto
-
+from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
 
 class StatesHumidifier(Enum):
     OFF = auto()
     ON = auto()
 
-class Humidifier:
-    def __init__(self):
-        self._intensity = 3       
-        self._water_level = 50     
-    
+class Humidifier(Dispositivo):
+    def __init__(self, id_: str, nome: str):
+        super().__init__(id_, nome, TipoDispositivo.UMIDIFICADOR)
+        self._intensity = 3
+        self._water_level = 50
 
+        self.machine = Machine(model=self, states=StatesHumidifier, transitions=[
+            {'trigger': 'ligar', 'source': StatesHumidifier.OFF, 'dest': StatesHumidifier.ON},
+            {'trigger': 'desligar', 'source': StatesHumidifier.ON, 'dest': StatesHumidifier.OFF},
+            {'trigger': 'ajustar_intensidade', 'source': StatesHumidifier.ON, 'dest': None},
+            {'trigger': 'reabastecer', 'source': '*', 'dest': None},
+        ], initial=StatesHumidifier.OFF, auto_transitions=False)
+
+    def ligar(self):
+        self.trigger("ligar")
+
+    def desligar(self):
+        self.trigger("desligar")
+        
     @property
-    def intensity(self):
-        return self._intensity
-    
-    @intensity.setter
-    def intensity(self, value):
+    def intensidade(self): return self._intensity
+
+    @intensidade.setter
+    def intensidade(self, value):
         if isinstance(value, int) and 1 <= value <= 5:
             self._intensity = value
             print(f">> Intensidade ajustada para {value}")
         else:
-            print("!! Intensidade inválida (deve ser entre 1 e 5).")
+            print("!! Intensidade inválida (1–5).")
 
     @property
-    def nivel_agua(self):
+    def nivel_agua(self): 
         return self._water_level
-    
+
     @nivel_agua.setter
     def nivel_agua(self, value):
         if isinstance(value, int) and 0 <= value <= 100:
@@ -35,47 +47,23 @@ class Humidifier:
         else:
             print("!! Nível de água inválido (0–100).")
 
-
     def on_enter_ON(self):
         if self._water_level > 0:
             print(">> Umidificador ligado")
         else:
-            print("!! Sem água no reservatório! Não é possível ligar.")
-            self.off()  
-    
-    def on_enter_OFF(self):
-        print(">> Umidificador desligado")
+            print("!! Sem água, não é possível ligar.")
+            self.desligar()
 
-    def adjust_intensity(self, value):
-        self.intensity = value  
+    def on_enter_OFF(self): print(">> Umidificador desligado")
 
-    def refuel(self, qtd):
+    def ajustar_intensidade(self, value): self.intensidade = value
+
+    def reabastecer(self, qtd):
         if isinstance(qtd, int) and qtd > 0:
-            new_level = self._water_level + qtd
-            if new_level > 100:
-                self._water_level = 100
-                print(f">> Reservatório cheio! (tentou reabastecer até {new_level}%)")
-            else:
-                self._water_level = new_level
-                print(f">> Água reabastecida. Nível atual: {self._water_level}%")
+            self._water_level = min(100, self._water_level + qtd)
+            print(f">> Nível de água: {self._water_level}%")
         else:
-            print("!! Quantidade inválida para refuel.")
+            print("!! Quantidade inválida para reabastecer.")
 
-
-transitions = [
-    {'trigger': 'on', 'source': StatesHumidifier.OFF, 'dest': StatesHumidifier.ON},
-    {'trigger': 'off', 'source': StatesHumidifier.ON, 'dest': StatesHumidifier.OFF},
-    {'trigger': 'adjust_intensity', 'source': StatesHumidifier.ON, 'dest': None},
-    {'trigger': 'refuel', 'source': '*', 'dest': None},
-]
-
-u = Humidifier()
-machine = Machine(model=u, states=StatesHumidifier, transitions=transitions,
-                  initial=StatesHumidifier.OFF, auto_transitions=False)
-
-if __name__ == "__main__":
-    print("Estado inicial:", u.state)
-    u.on()                     
-    u.adjust_intensity(3)   
-    u.refuel(90)          
-    u.off()                    
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Água: {self._water_level}%"
