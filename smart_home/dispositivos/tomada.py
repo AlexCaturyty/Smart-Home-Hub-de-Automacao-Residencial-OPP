@@ -26,15 +26,25 @@ class Smartplug(Dispositivo):
 
     def desligar(self):
         self.trigger("desligar")
-    # ------------- Métodos da classe Tomada
+
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+    
+    # ------------- Métodos da classe -----------------------
     @property
-    def potencia_w(self): return self._potencia_w
+    def potencia_w(self): 
+        return self._potencia_w
 
     @potencia_w.setter
     def potencia_w(self, value):
-        if not isinstance(value, int) or value < 0:
+        try:
+            value = int(value)  
+        except (ValueError, TypeError):
+            raise ValueError("Potência deve ser um número inteiro >= 0")
+        if value < 0:
             raise ValueError("Potência deve ser >= 0")
         self._potencia_w = value
+
 
     def on_enter_ON(self):
         self.moment_on = datetime.now()
@@ -47,5 +57,4 @@ class Smartplug(Dispositivo):
             print(f">> Consumo acumulado: {self.consumption_wh:.2f} Wh")
         print(">> Tomada desligada!")
 
-    def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Consumo: {self.consumption_wh:.2f} Wh"
+    

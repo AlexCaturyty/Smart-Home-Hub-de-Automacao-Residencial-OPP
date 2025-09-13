@@ -19,12 +19,19 @@ class Humidifier(Dispositivo):
             {'trigger': 'reabastecer', 'source': '*', 'dest': None},
         ], initial=StatesHumidifier.OFF, auto_transitions=False)
 
+    # -------- Implementações da ABC Dispositivo --------
+
     def ligar(self):
         self.trigger("ligar")
 
     def desligar(self):
         self.trigger("desligar")
-        
+    
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Água: {self._water_level}% | Intensidade: {self._intensity}%"
+
+    # ------------- Métodos da classe -----------------------
+    #  
     @property
     def intensidade(self): return self._intensity
 
@@ -54,16 +61,34 @@ class Humidifier(Dispositivo):
             print("!! Sem água, não é possível ligar.")
             self.desligar()
 
-    def on_enter_OFF(self): print(">> Umidificador desligado")
+    def on_enter_OFF(self): 
+        print(">> Umidificador desligado")
 
-    def ajustar_intensidade(self, value): self.intensidade = value
+    def ajustar_intensidade(self, new_value):
+        try:
+            value = int(new_value)
+        except (ValueError, TypeError):
+            print(">> Intensidade inválida. Use um número inteiro entre 1 e 5.")
+            return
 
-    def reabastecer(self, qtd):
-        if isinstance(qtd, int) and qtd > 0:
+        if 1 <= value <= 5:
+            self.intensidade = value
+            print(f">> Intensidade ajustada para {value}")
+        else:
+            print(">> Intensidade inválida (1–5).")
+
+    def reabastecer(self, new_qtd):
+        try:
+            qtd = int(new_qtd)
+        except (ValueError, TypeError):
+            print(">> Quantidade inválida para reabastecer. Use um número inteiro positivo.")
+            return
+
+        if qtd > 0:
             self._water_level = min(100, self._water_level + qtd)
             print(f">> Nível de água: {self._water_level}%")
         else:
-            print("!! Quantidade inválida para reabastecer.")
+            print(">> Quantidade inválida para reabastecer. Deve ser > 0.")
 
-    def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Água: {self._water_level}%"
+
+    

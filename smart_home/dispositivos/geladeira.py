@@ -27,12 +27,19 @@ class Freeze(Dispositivo):
             {'trigger': 'mudar_modo', 'source': StatesFreeze.CLOSED_DOOR, 'dest': None, 'before': 'change_mode'}
         ], initial=StatesFreeze.OFF, auto_transitions=False)
 
+    # -------- Implementações da ABC Dispositivo --------
+
     def ligar(self):
         self.trigger("ligar")
 
     def desligar(self):
         self.trigger("desligar")
-        
+    
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+    
+    # ------------- Métodos da classe -----------------------
+    
     def check_temperature(self, t):
         if 0 <= t <= 10:
             self.temperature = t
@@ -56,5 +63,4 @@ class Freeze(Dispositivo):
     def on_enter_OFF(self):
         print(">> Geladeira desligada.")
 
-    def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+    

@@ -32,13 +32,15 @@ class Port(Dispositivo):
     def on_enter_UNLOCKED(self): print(">> Porta destrancada e fechada.")
     def on_enter_OPEN(self): print(">> Porta aberta.")
 
-    def ligar(self): 
-        self.abrir()
-    
-    def desligar(self): 
-        self.fechar()
+    # -------- Implementações da ABC Dispositivo --------
 
     def status(self):
         return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Tentativas inválidas: {self.invalid_attempts}"
 
+    
+    def ligar(self): # metodos auxiliares que não sao utilizados aqui na classe porta mas para não dar erro na classe ABC estão aqui
+        self.abrir()
+    
+    def desligar(self): # metodos auxiliares que não sao utilizados aqui na classe porta mas para não dar erro na classe ABC estão aqui
+        self.fechar()
 

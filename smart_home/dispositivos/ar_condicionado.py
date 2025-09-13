@@ -22,19 +22,31 @@ class AirConditioner(Dispositivo):
             {'trigger': 'ajustar_temperatura', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'check_temperature'},
             {'trigger': 'mudar_modo', 'source': StatesAirConditioner.ON, 'dest': None, 'before': 'change_mode'}
         ], initial=StatesAirConditioner.OFF, auto_transitions=False)
+        
+    # -------- Implementações da ABC Dispositivo --------
 
     def ligar(self):
         self.trigger("ligar")
 
     def desligar(self):
         self.trigger("desligar")
-        
-    def check_temperature(self, t):
-        if 16 <= t <= 30:
-            self.temperature = t
-            print(f">> Temperatura ajustada: {t}°C")
+
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+    # ------------- Métodos da classe -----------------------    
+    def check_temperature(self, new_temp):
+        try:
+            new_temp = int(new_temp)  
+        except (ValueError, TypeError):
+            print(">> Valor inválido para temperatura. Use um número inteiro entre 16 e 30°C.")
+            return
+
+        if 16 <= new_temp <= 30:
+            self.temperature = new_temp
+            print(f">> Temperatura ajustada: {new_temp}°C")
         else:
             print(">> Temperatura inválida (16–30°C)")
+
 
     def change_mode(self, mode):
         try:
@@ -48,5 +60,4 @@ class AirConditioner(Dispositivo):
     def on_enter_OFF(self): 
         print(">> Ar-condicionado desligado.")
 
-    def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+    

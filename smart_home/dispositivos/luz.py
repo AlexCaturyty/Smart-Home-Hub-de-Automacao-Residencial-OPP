@@ -23,13 +23,17 @@ class Ligth(Dispositivo):
             {'trigger': 'desligar', 'source': StateLigth.ON, 'dest': StateLigth.OFF}
         ], initial=StateLigth.OFF, auto_transitions=False)
 
-          # -------- Implementações da ABC Dispositivo --------
+    # -------- Implementações da ABC Dispositivo --------
     def ligar(self):
         self.trigger("ligar")
 
     def desligar(self):
         self.trigger("desligar")
 
+    def status(self):
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Brilho: {self._brightness}% | Cor: {self._color.value}"
+    # ------------- Métodos da classe -----------------------
+    
     @property
     def brightness(self):
         return self._brightness
@@ -64,7 +68,6 @@ class Ligth(Dispositivo):
         print(">> A luz foi desligada.")
 
     
-    def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Brilho: {self._brightness}% | Cor: {self._color.value}"
+    
 
 
