@@ -33,7 +33,8 @@ class AirConditioner(Dispositivo):
 
     def status(self):
         return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self._temperature}°C | Modo: {self._mode.value}"
-    # ------------- Métodos da classe -----------------------    
+
+# -------- Métodos auxiliares para a máquina --------
     def check_temperature(self, new_temp):
         try:
             new_temp = int(new_temp)  
@@ -54,6 +55,8 @@ class AirConditioner(Dispositivo):
             print(f">> Modo alterado: {self._mode.value}")
         except KeyError:
             print(">> Modo inválido (FRIO/QUENTE)")
+
+    # -------- Callbacks da máquina --------
 
     def on_enter_ON(self):
         print(">> Ar-condicionado ligado.")

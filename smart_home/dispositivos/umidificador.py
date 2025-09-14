@@ -54,16 +54,6 @@ class Humidifier(Dispositivo):
         else:
             print("!! Nível de água inválido (0–100).")
 
-    def on_enter_ON(self):
-        if self._water_level > 0:
-            print(">> Umidificador ligado")
-        else:
-            print("!! Sem água, não é possível ligar.")
-            self.desligar()
-
-    def on_enter_OFF(self): 
-        print(">> Umidificador desligado")
-
     def ajustar_intensidade(self, new_value):
         try:
             value = int(new_value)
@@ -89,6 +79,20 @@ class Humidifier(Dispositivo):
             print(f">> Nível de água: {self._water_level}%")
         else:
             print(">> Quantidade inválida para reabastecer. Deve ser > 0.")
+            
+    # -------- Callbacks da máquina --------
+
+    def on_enter_ON(self):
+        if self._water_level > 0:
+            print(">> Umidificador ligado")
+        else:
+            print("!! Sem água, não é possível ligar.")
+            self.desligar()
+
+    def on_enter_OFF(self): 
+        print(">> Umidificador desligado")
+
+    
 
 
     

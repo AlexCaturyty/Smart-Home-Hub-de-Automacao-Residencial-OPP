@@ -19,6 +19,9 @@ class Port(Dispositivo):
             {'trigger': 'fechar', 'source': StatePort.OPEN, 'dest': StatePort.UNLOCKED, 'conditions': 'may_close'}
         ], initial=StatePort.LOCKED, auto_transitions=False)
 
+    # -------- Métodos auxiliares para a máquina --------
+
+
     def can_lock(self):
         if self.state == StatePort.OPEN:
             self._invalid_attempts += 1
@@ -28,6 +31,7 @@ class Port(Dispositivo):
 
     def may_close(self): return self.state == StatePort.OPEN
 
+    # -------- Callbacks da máquina --------
     def on_enter_LOCKED(self): print(">> Porta trancada.")
     def on_enter_UNLOCKED(self): print(">> Porta destrancada e fechada.")
     def on_enter_OPEN(self): print(">> Porta aberta.")

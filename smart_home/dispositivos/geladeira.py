@@ -38,7 +38,7 @@ class Freeze(Dispositivo):
     def status(self):
         return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self._temperature}°C | Modo: {self._mode.value}"
     
-    # ------------- Métodos da classe -----------------------
+    # -------- Métodos auxiliares para a máquina --------
     
     def check_temperature(self, t):
         try:
@@ -58,6 +58,7 @@ class Freeze(Dispositivo):
         except KeyError:
             print(">> Modo inválido (ECO/TURBO)")
 
+    # -------- Callbacks da máquina --------
     def on_enter_OPEN_DOOR(self): 
         print(">> Geladeira aberta.")
     def on_enter_CLOSED_DOOR(self): 

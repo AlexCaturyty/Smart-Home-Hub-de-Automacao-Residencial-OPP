@@ -45,6 +45,7 @@ class Smartplug(Dispositivo):
             raise ValueError("Potência deve ser >= 0")
         self._potencia_w = value
 
+    # -------- Callbacks da máquina --------
 
     def on_enter_ON(self):
         self._moment_on = datetime.now()
