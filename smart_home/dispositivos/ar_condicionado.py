@@ -13,8 +13,8 @@ class AirConditionerMODE(Enum):
 class AirConditioner(Dispositivo):
     def __init__(self, id_: str, nome: str):
         super().__init__(id_, nome, TipoDispositivo.ARCONDICIONADO)
-        self.temperature = 16
-        self.mode = AirConditionerMODE.FRIO
+        self._temperature = 16
+        self._mode = AirConditionerMODE.FRIO
 
         self.machine = Machine(model=self, states=StatesAirConditioner, transitions=[
             {'trigger': 'ligar', 'source': StatesAirConditioner.OFF, 'dest': StatesAirConditioner.ON},
@@ -25,14 +25,14 @@ class AirConditioner(Dispositivo):
         
     # -------- Implementações da ABC Dispositivo --------
 
-    def ligar(self):
+    def turn_on(self):
         self.trigger("ligar")
 
-    def desligar(self):
+    def turn_off(self):
         self.trigger("desligar")
 
     def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self._temperature}°C | Modo: {self._mode.value}"
     # ------------- Métodos da classe -----------------------    
     def check_temperature(self, new_temp):
         try:
@@ -42,7 +42,7 @@ class AirConditioner(Dispositivo):
             return
 
         if 16 <= new_temp <= 30:
-            self.temperature = new_temp
+            self._temperature = new_temp
             print(f">> Temperatura ajustada: {new_temp}°C")
         else:
             print(">> Temperatura inválida (16–30°C)")
@@ -50,8 +50,8 @@ class AirConditioner(Dispositivo):
 
     def change_mode(self, mode):
         try:
-            self.mode = AirConditionerMODE[mode.upper()]
-            print(f">> Modo alterado: {self.mode.value}")
+            self._mode = AirConditionerMODE[mode.upper()]
+            print(f">> Modo alterado: {self._mode.value}")
         except KeyError:
             print(">> Modo inválido (FRIO/QUENTE)")
 

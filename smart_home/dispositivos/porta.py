@@ -10,21 +10,21 @@ class StatePort(Enum):
 class Port(Dispositivo):
     def __init__(self, id_: str, nome: str):
         super().__init__(id_, nome, TipoDispositivo.PORTA)
-        self.invalid_attempts = 0
+        self._invalid_attempts = 0
 
         self.machine = Machine(model=self, states=StatePort, transitions=[
             {'trigger': 'destrancar', 'source': StatePort.LOCKED, 'dest': StatePort.UNLOCKED},
-            {'trigger': 'trancar', 'source': StatePort.UNLOCKED, 'dest': StatePort.LOCKED, 'conditions': 'can_lock'},
+            {'trigger': 'trancar', 'source': [StatePort.UNLOCKED, StatePort.OPEN], 'dest': StatePort.LOCKED, 'conditions': 'can_lock'},
             {'trigger': 'abrir', 'source': StatePort.UNLOCKED, 'dest': StatePort.OPEN},
             {'trigger': 'fechar', 'source': StatePort.OPEN, 'dest': StatePort.UNLOCKED, 'conditions': 'may_close'}
         ], initial=StatePort.LOCKED, auto_transitions=False)
 
     def can_lock(self):
         if self.state == StatePort.OPEN:
+            self._invalid_attempts += 1
             print(">> Não pode trancar porta aberta!")
-            self.invalid_attempts += 1
             return False
-        return True
+        return True 
 
     def may_close(self): return self.state == StatePort.OPEN
 
@@ -35,12 +35,12 @@ class Port(Dispositivo):
     # -------- Implementações da ABC Dispositivo --------
 
     def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Tentativas inválidas: {self.invalid_attempts}"
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Tentativas inválidas: {self._invalid_attempts}"
 
     
-    def ligar(self): # metodos auxiliares que não sao utilizados aqui na classe porta mas para não dar erro na classe ABC estão aqui
+    def turn_on(self): 
         self.abrir()
     
-    def desligar(self): # metodos auxiliares que não sao utilizados aqui na classe porta mas para não dar erro na classe ABC estão aqui
+    def turn_off(self): 
         self.fechar()
 

@@ -11,9 +11,9 @@ class Smartplug(Dispositivo):
     def __init__(self, id_: str, nome: str, potencia_w=100):
         super().__init__(id_, nome, TipoDispositivo.TOMADA)
         self._potencia_w = None
-        self.potencia_w = potencia_w
-        self.consumption_wh = 0.0
-        self.moment_on = None
+        self._potencia_w = potencia_w
+        self._consumption_wh = 0.0
+        self._moment_on = None
 
         self.machine = Machine(model=self, states=StatesSmartplug, transitions=[
             {'trigger': 'ligar', 'source': StatesSmartplug.OFF, 'dest': StatesSmartplug.ON},
@@ -21,14 +21,14 @@ class Smartplug(Dispositivo):
         ], initial=StatesSmartplug.OFF, auto_transitions=False)
 
       # -------- Implementações da ABC Dispositivo --------
-    def ligar(self):
+    def turn_on(self):
         self.trigger("ligar")
 
-    def desligar(self):
+    def turn_off(self):
         self.trigger("desligar")
 
     def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Temp: {self.temperature}°C | Modo: {self.mode.value}"
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Potência: {self._potencia_w}W | Consumo: {self._consumption_wh:.2f}Wh"
     
     # ------------- Métodos da classe -----------------------
     @property
@@ -47,14 +47,14 @@ class Smartplug(Dispositivo):
 
 
     def on_enter_ON(self):
-        self.moment_on = datetime.now()
+        self._moment_on = datetime.now()
         print(">> Tomada ligada!")
 
     def on_enter_OFF(self):
-        if self.moment_on:
-            segundos = (datetime.now() - self.moment_on).total_seconds()
-            self.consumption_wh += self.potencia_w * (segundos / 3600)
-            print(f">> Consumo acumulado: {self.consumption_wh:.2f} Wh")
+        if self._moment_on:
+            segundos = (datetime.now() - self._moment_on).total_seconds()
+            self._consumption_wh += self._potencia_w * (segundos / 3600)
+            print(f">> Consumo acumulado: {self._consumption_wh:.2f} Wh")
         print(">> Tomada desligada!")
 
     

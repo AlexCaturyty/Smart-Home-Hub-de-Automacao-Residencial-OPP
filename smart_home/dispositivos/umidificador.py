@@ -21,10 +21,10 @@ class Humidifier(Dispositivo):
 
     # -------- Implementações da ABC Dispositivo --------
 
-    def ligar(self):
+    def turn_on(self):
         self.trigger("ligar")
 
-    def desligar(self):
+    def turn_on(self):
         self.trigger("desligar")
     
     def status(self):
