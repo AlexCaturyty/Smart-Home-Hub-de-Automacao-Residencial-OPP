@@ -1,0 +1,395 @@
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'id': 'tomada_tv', 'comando': 'ligar', 'antes': 'tomada_tv | Tomada da TV | Tomada | Estado: OFF | Consumo: 0.00 Wh', 'depois': 'tomada_tv | Tomada da TV | Tomada | Estado: ON | Consumo: 0.00 Wh'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_entrada', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'id': 'luz_sala', 'comando': 'ligar', 'antes': 'luz_sala | Luz da Sala | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': 'luz_sala | Luz da Sala | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'id': 'luz_sala', 'comando': 'desligar', 'antes': 'luz_sala | Luz da Sala | Luz | Estado: ON | Brilho: 0% | Cor: neutra', 'depois': 'luz_sala | Luz da Sala | Luz | Estado: OFF | Brilho: 0% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'id': 'tomada_tv', 'comando': 'ligar', 'antes': 'tomada_tv | Tomada da TV | Tomada | Estado: OFF | Consumo: 0.00 Wh', 'depois': 'tomada_tv | Tomada da TV | Tomada | Estado: ON | Consumo: 0.00 Wh'}
+{'id': 'tomada_tv', 'comando': 'desligar', 'antes': 'tomada_tv | Tomada da TV | Tomada | Estado: ON | Consumo: 0.00 Wh', 'depois': 'tomada_tv | Tomada da TV | Tomada | Estado: OFF | Consumo: 3.41 Wh'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_tv', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto', 'tipo': 'Ar Condicionado'}
+{'id': 'luz_sala', 'comando': 'ligar', 'antes': 'luz_sala | luz | Luz | Estado: OFF | Brilho: 50% | Cor: neutra', 'depois': 'luz_sala | luz | Luz | Estado: ON | Brilho: 50% | Cor: neutra'}
+{'id': 'umidificador', 'comando': 'ligar', 'antes': 'umidificador | Umidificador | Umidificador | Estado: OFF | Água: 50%', 'depois': 'umidificador | Umidificador | Umidificador | Estado: ON | Água: 50%'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_entrada', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'Luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_sala', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_entrada', 'tipo': 'Porta'}
+{'id': 'ar_quarto', 'comando': 'ligar', 'antes': 'ar_quarto | ar_condicionado_alex | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': 'ar_quarto | ar_condicionado_alex | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador', 'tipo': 'Umidificador'}
+{'id': 'umidificador', 'comando': 'ligar', 'antes': 'umidificador | Umidificador_caro | Umidificador | Estado: OFF | Água: 50%', 'depois': 'umidificador | Umidificador_caro | Umidificador | Estado: ON | Água: 50%'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador', 'tipo': 'Umidificador'}
+{'id': 'umidificador', 'comando': 'ligar', 'antes': 'umidificador | umidificador | Umidificador | Estado: OFF | Água: 50%', 'depois': 'umidificador | umidificador | Umidificador | Estado: ON | Água: 50%'}
+{'id': 'umidificador', 'comando': 'reabastecer', 'antes': 'umidificador | umidificador | Umidificador | Estado: ON | Água: 50%', 'depois': 'umidificador | umidificador | Umidificador | Estado: ON | Água: 80%'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_condicionado', 'tipo': 'Ar Condicionado'}
+{'id': 'ar_condicionado', 'comando': 'ligar', 'antes': 'ar_condicionado | ar | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': 'ar_condicionado | ar | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'evento': 'DispositivoAdicionado', 'id': 'umi', 'tipo': 'Umidificador'}
+{'id': 'umi', 'comando': 'ligar', 'antes': 'umi | umidficador | Umidificador | Estado: OFF | Água: 50% | Intensidade: 3%', 'depois': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'id': 'umi', 'comando': 'ajustar_intensidade', 'antes': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%', 'depois': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'id': 'umi', 'comando': 'ajustar_intensidade', 'antes': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%', 'depois': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'id': 'umi', 'comando': 'reabastecer', 'antes': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%', 'depois': 'umi | umidficador | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'id': '1', 'comando': 'ligar', 'antes': '1 | um | Umidificador | Estado: OFF | Água: 50% | Intensidade: 3%', 'depois': '1 | um | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'id': '1', 'comando': 'ajustar_intensidade', 'antes': '1 | um | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%', 'depois': '1 | um | Umidificador | Estado: ON | Água: 50% | Intensidade: 5%'}
+{'id': '1', 'comando': 'reabastecer', 'antes': '1 | um | Umidificador | Estado: ON | Água: 50% | Intensidade: 5%', 'depois': '1 | um | Umidificador | Estado: ON | Água: 90% | Intensidade: 5%'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | ar | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': '2 | ar | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Ar Condicionado'}
+{'id': '1', 'comando': 'ligar', 'antes': '1 | arcond | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'id': '1', 'comando': 'ajustar_temperatura', 'antes': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio', 'depois': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio'}
+{'id': '1', 'comando': 'mudar_modo', 'antes': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio', 'depois': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: quente'}
+{'id': '1', 'comando': 'mudar_modo', 'antes': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: quente', 'depois': '1 | arcond | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: quente'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'id': '1', 'comando': 'ligar', 'antes': '1 | umidi | Umidificador | Estado: OFF | Água: 50% | Intensidade: 3%', 'depois': '1 | umidi | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | ar | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': '2 | ar | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'id': '2', 'comando': 'ajustar_temperatura', 'antes': '2 | ar | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio', 'depois': '2 | ar | Ar Condicionado | Estado: ON | Temp: 24°C | Modo: frio'}
+{'id': '2', 'comando': 'mudar_modo', 'antes': '2 | ar | Ar Condicionado | Estado: ON | Temp: 24°C | Modo: frio', 'depois': '2 | ar | Ar Condicionado | Estado: ON | Temp: 24°C | Modo: quente'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'id': '3', 'comando': 'ligar', 'antes': '3 | toma | Tomada | Estado: OFF | Consumo: 0.00 Wh', 'depois': '3 | toma | Tomada | Estado: ON | Consumo: 0.00 Wh'}
+{'evento': 'DispositivoAdicionado', 'id': '4', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': '9', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '3', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'id': 'tomada_id', 'comando': 'ligar', 'antes': 'tomada_id | tomada | Tomada | Estado: OFF', 'depois': 'tomada_id | tomada | Tomada | Estado: ON'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'id': '1', 'comando': 'ligar', 'antes': '1 | tu | Tomada | Estado: OFF', 'depois': '1 | tu | Tomada | Estado: ON'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'id': 'ar_id', 'comando': 'ligar', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'id': 'ar_id', 'comando': 'mudar_modo', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: quente'}
+{'id': 'ar_id', 'comando': 'ajustar_temperatura', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: quente', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: quente'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'umidificador_id', 'comando': 'ligar', 'antes': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: OFF | Água: 50% | Intensidade: 3%', 'depois': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%'}
+{'id': 'umidificador_id', 'comando': 'reabastecer', 'antes': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: ON | Água: 50% | Intensidade: 3%', 'depois': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: ON | Água: 100% | Intensidade: 3%'}
+{'id': 'umidificador_id', 'comando': 'ajustar_intensidade', 'antes': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: ON | Água: 100% | Intensidade: 3%', 'depois': 'umidificador_id | umidifcador_quarto | Umidificador | Estado: ON | Água: 100% | Intensidade: 5%'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'id': '2', 'comando': 'definir_brilho', 'antes': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 60% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': '2', 'comando': 'ligar', 'antes': '2 | luz | Luz | Estado: OFF | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra'}
+{'id': '2', 'comando': 'definir_brilho', 'antes': '2 | luz | Luz | Estado: ON | Brilho: 0% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 70% | Cor: neutra'}
+{'id': '2', 'comando': 'definir_cor', 'antes': '2 | luz | Luz | Estado: ON | Brilho: 70% | Cor: neutra', 'depois': '2 | luz | Luz | Estado: ON | Brilho: 70% | Cor: quente'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'freeze_id', 'comando': 'ligar', 'antes': 'freeze_id | freezer | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'freeze_id', 'comando': 'ligar', 'antes': 'freeze_id | freezer | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'freeze_id', 'comando': 'ligar', 'antes': 'freeze_id | freezer | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'id': 'freeze_id', 'comando': 'mudar_modo', 'antes': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: turbo'}
+{'id': 'freeze_id', 'comando': 'abrir_porta', 'antes': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: turbo', 'depois': 'freeze_id | freezer | Geladeira | Estado: OPEN_DOOR | Temp: 5°C | Modo: turbo'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'freeze_id', 'comando': 'ligar', 'antes': 'freeze_id | freezer | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'freeze_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'id': 'freeze_id', 'comando': 'ligar', 'antes': 'freeze_id | freezer | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'id': 'freeze_id', 'comando': 'ajustar_temperatura', 'antes': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 5°C | Modo: eco', 'depois': 'freeze_id | freezer | Geladeira | Estado: ON | Temp: 6°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'id': 'f', 'comando': 'ligar', 'antes': 'f | freze | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'f | freze | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'id': 'f', 'comando': 'ajustar_temperatura', 'antes': 'f | freze | Geladeira | Estado: ON | Temp: 5°C | Modo: eco', 'depois': 'f | freze | Geladeira | Estado: ON | Temp: 6°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': '1', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': '2', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'id': 'f', 'comando': 'ligar', 'antes': 'f | freze | Geladeira | Estado: OFF | Temp: 5°C | Modo: eco', 'depois': 'f | freze | Geladeira | Estado: ON | Temp: 5°C | Modo: eco'}
+{'id': 'f', 'comando': 'ajustar_temperatura', 'antes': 'f | freze | Geladeira | Estado: ON | Temp: 5°C | Modo: eco', 'depois': 'f | freze | Geladeira | Estado: ON | Temp: 6°C | Modo: eco'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'id': 'u', 'comando': 'reabastecer', 'antes': 'u | umidifi | Umidificador | Estado: OFF | Água: 50% | Intensidade: 3%', 'depois': 'u | umidifi | Umidificador | Estado: OFF | Água: 100% | Intensidade: 3%'}
+{'id': 'u', 'comando': 'ajustar_intensidade', 'antes': 'u | umidifi | Umidificador | Estado: OFF | Água: 100% | Intensidade: 3%', 'depois': 'u | umidifi | Umidificador | Estado: OFF | Água: 100% | Intensidade: 5%'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF', 'depois': 't | toma | Tomada | Estado: ON'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: ON', 'depois': 't | toma | Tomada | Estado: OFF'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF', 'depois': 't | toma | Tomada | Estado: ON'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: ON', 'depois': 't | toma | Tomada | Estado: OFF'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'ar_id', 'comando': 'ligar', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: OFF | Temp: 16°C | Modo: frio', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio'}
+{'id': 'ar_id', 'comando': 'ajustar_temperatura', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 16°C | Modo: frio', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio'}
+{'id': 'ar_id', 'comando': 'mudar_modo', 'antes': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio', 'depois': 'ar_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: quente'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF', 'depois': 't | toma | Tomada | Estado: ON'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 'porta_id', 'comando': 'destrancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: LOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'abrir', 'antes': 'porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 0', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 1'}
+{'id': 'porta_id', 'comando': 'trancar', 'antes': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 1', 'depois': 'porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 2'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF | Potência: 100W | Consumo: 4.97Wh', 'depois': 't | toma | Tomada | Estado: ON | Potência: 100W | Consumo: 4.97Wh'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: ON | Potência: 100W | Consumo: 4.97Wh', 'depois': 't | toma | Tomada | Estado: OFF | Potência: 100W | Consumo: 5.33Wh'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 5.33Wh', 'depois': 't | toma | Tomada | Estado: ON | Potência: 400W | Consumo: 5.33Wh'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: ON | Potência: 400W | Consumo: 5.33Wh', 'depois': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 6.72Wh'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 't', 'comando': 'ligar', 'antes': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 5.33Wh', 'depois': 't | toma | Tomada | Estado: ON | Potência: 400W | Consumo: 5.33Wh'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: ON | Potência: 400W | Consumo: 5.33Wh', 'depois': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 7.09Wh'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'f', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'u', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 't', 'tipo': 'Tomada'}
+{'id': 't', 'comando': 'desligar', 'antes': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 7.09Wh', 'depois': 't | toma | Tomada | Estado: OFF | Potência: 400W | Consumo: 7.09Wh'}

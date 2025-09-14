@@ -26,9 +26,9 @@ class Dispositivo(ABC):
 # -------- classe intermediária para os dispositivos ligáveis --------
 class Ligavel(Dispositivo):
     @abstractmethod
-    def ligar(self):
+    def turn_on(self):
         pass
 
     @abstractmethod
-    def desligar(self):
+    def turn_off(self):
         pass

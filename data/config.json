@@ -1,0 +1,90 @@
+{
+  "hub": {
+    "nome": "Minha Casa",
+    "versao": "1.0"
+  },
+  "dispositivos": [
+    {
+      "id": "ar_id",
+      "tipo": "ARCONDICIONADO",
+      "nome": "condicionado",
+      "estado": "OFF",
+      "atributos": {
+        "_temperature": 20,
+        "temperature": 20
+      }
+    },
+    {
+      "id": "porta_id",
+      "tipo": "PORTA",
+      "nome": "porta_entrada",
+      "estado": "LOCKED",
+      "atributos": {
+        "_invalid_attempts": 2,
+        "invalid_attempts": 0
+      }
+    },
+    {
+      "id": "f",
+      "tipo": "GELADEIRA",
+      "nome": "freze",
+      "estado": "OFF",
+      "atributos": {
+        "_temperature": 6
+      }
+    },
+    {
+      "id": "u",
+      "tipo": "UMIDIFICADOR",
+      "nome": "umidifi",
+      "estado": "OFF",
+      "atributos": {
+        "_intensity": 5,
+        "_water_level": 100
+      }
+    },
+    {
+      "id": "t",
+      "tipo": "TOMADA",
+      "nome": "toma",
+      "estado": "OFF",
+      "atributos": {
+        "_potencia_w": 400,
+        "_consumption_wh": 7.094241277777778
+      }
+    }
+  ],
+  "rotinas": {
+    "modo_noite": [
+      {
+        "id": "luz_sala",
+        "comando": "desligar"
+      },
+      {
+        "id": "ar_quarto",
+        "comando": "ligar",
+        "argumentos": {
+          "temperatura": 22
+        }
+      },
+      {
+        "id": "porta_entrada",
+        "comando": "fechar"
+      }
+    ],
+    "acordar": [
+      {
+        "id": "luz_sala",
+        "comando": "ligar"
+      },
+      {
+        "id": "umidificador",
+        "comando": "ligar"
+      },
+      {
+        "id": "ar_quarto",
+        "comando": "desligar"
+      }
+    ]
+  }
+}
