@@ -8,14 +8,19 @@ from smart_home.dispositivos.luz import Ligth
 from smart_home.dispositivos.umidificador import Humidifier
 from smart_home.dispositivos.ar_condicionado import AirConditioner
 
-def salvar_config(self, arquivo="data/config.json"): #     Salva todos os dados do hub (nome, dispositivos, rotinas) em um JSON.
+
+# Função para salvar a configuração do hub em um arquivo JSON
+def salvar_config(self, arquivo="data/config.json"):
+    # Define diretório base e de dados
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     data_dir = os.path.join(base_dir, "data")
-    os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(data_dir, exist_ok=True) 
 
+    # Ajusta caminho do arquivo se não for absoluto
     if not os.path.isabs(arquivo):
         arquivo = os.path.join(data_dir, os.path.basename(arquivo))
-
+ 
+    # Monta dicionário com dados do hub
     data = {
         "hub": {
             "nome": self.nome,
@@ -25,14 +30,18 @@ def salvar_config(self, arquivo="data/config.json"): #     Salva todos os dados 
         "rotinas": self.rotinas
     }
 
+    # Serializa cada dispositivo
     for d in self.dispositivos.values():
         atributos_serializaveis = {}
         for k, v in d.__dict__.items():
+            # Ignora atributos que não devem ser salvos
             if k in ("id", "nome", "tipo", '_moment_on'):
                 continue
+            # Salva apenas tipos simples
             if isinstance(v, (int, float, str, bool, list, dict, type(None))):
                 atributos_serializaveis[k] = v
 
+        # Adiciona dispositivo ao JSON
         data["dispositivos"].append({
             "id": d.id,
             "tipo": d.tipo.name,
@@ -41,37 +50,40 @@ def salvar_config(self, arquivo="data/config.json"): #     Salva todos os dados 
             "atributos": atributos_serializaveis
         })
 
-
+   
     with open(arquivo, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     print(f">> Configuração salva em {arquivo}")
 
 
-def carregar_config(self, arquivo="config.json"): #    Carrega dispositivos e rotinas de um JSON para dentro do hub.
+
+# Função para carregar configuração do hub a partir de um arquivo JSON
+def carregar_config(self, arquivo="config.json"):
+    
     with open(arquivo, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    # Atualiza nome e rotinas do hub
     self.nome = data["hub"]["nome"]
     if "rotinas" in data and data["rotinas"]:
         self.rotinas = data["rotinas"]
 
-
-
+    # Carrega dispositivos do JSON
     for d in data.get("dispositivos", []):
         id_ = d["id"]
         nome = d["nome"]
-        tipo = d["tipo"]  
+        tipo = d["tipo"]  # Tipo do dispositivo
         atributos = d.get("atributos", {})
 
         try:
-            tipo_enum = TipoDispositivo[tipo]  
+            tipo_enum = TipoDispositivo[tipo]  # Converte string para enum
         except KeyError:
             print(f">> Tipo desconhecido: {tipo}")
             continue
 
+        # Instancia o dispositivo correto conforme o tipo
         if tipo_enum == TipoDispositivo.TOMADA:
-            
             dispositivo = Smartplug(id_, nome, potencia_w=atributos.get("potencia_w", 0))
         elif tipo_enum == TipoDispositivo.PORTA:
             dispositivo = Port(id_, nome)
@@ -87,11 +99,13 @@ def carregar_config(self, arquivo="config.json"): #    Carrega dispositivos e ro
             print(f">> Tipo não suportado: {tipo_enum}")
             continue
 
+        # Seta atributos extras do dispositivo
         for attr, valor in atributos.items():
             if attr == 'moment_on':
                 continue
             setattr(dispositivo, attr, valor)
 
+        # Adiciona o dispositivo ao hub
         self.adicionar_dispositivo(dispositivo)
 
     return data

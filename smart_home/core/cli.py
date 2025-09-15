@@ -1,28 +1,28 @@
-# smart_home/core/cli.py
-import argparse
-from smart_home.core.hub import Hub
-from smart_home.core.observers import ConsoleObserver, FileObserver
-from smart_home.dispositivos.tomada import Smartplug
-from smart_home.dispositivos.porta import Port
-from smart_home.dispositivos.ar_condicionado import AirConditioner
-from smart_home.dispositivos.geladeira import Freeze
-from smart_home.dispositivos.luz import Ligth
-from smart_home.dispositivos.umidificador import Humidifier
-from smart_home.core.dispositivos import TipoDispositivo
+import argparse  
+from smart_home.core.hub import Hub  
+from smart_home.core.observers import ConsoleObserver, FileObserver  
+from smart_home.dispositivos.tomada import Smartplug  
+from smart_home.dispositivos.porta import Port 
+from smart_home.dispositivos.ar_condicionado import AirConditioner  
+from smart_home.dispositivos.geladeira import Freeze  
+from smart_home.dispositivos.luz import Ligth  
+from smart_home.dispositivos.umidificador import Humidifier 
+from smart_home.core.dispositivos import TipoDispositivo 
 
-# python -m smart_home.core.cli --config data/config.json
+# Exemplo de execução: python -m smart_home.core.cli --config data/config.json
 
 
 def menu(args):
     hub = Hub("Casa Exemplo")
+    # Adiciona observadores para registrar eventos no console e em arquivo
     hub.registrar_observer(ConsoleObserver())
     hub.registrar_observer(FileObserver("data/eventos.txt"))
 
-    # Se passar --config, carrega as configurações do JSON no Hub
+    # Se o usuário passar --config, carrega as configurações do arquivo JSON
     if args.config:
         hub.carregar_config(args.config)
 
-
+    
     while True:
         print("""
 === SMART HOME HUB ===
@@ -39,9 +39,11 @@ def menu(args):
 """)
         opcao = input("Escolha uma opcao: ").strip()
 
+        # Opção 1: lista todos os dispositivos cadastrados
         if opcao == "1":
             hub.listar_dispositivos()
 
+        # Opção 2: mostra o status de um dispositivo específico
         elif opcao == "2":
             id_ = input("ID do dispositivo: ").strip()
             disp = hub.dispositivos.get(id_)
@@ -50,6 +52,7 @@ def menu(args):
             else:
                 print(">> Dispositivo não encontrado.")
 
+        # Opção 3: executa um comando em um dispositivo
         elif opcao == "3":
             id_ = input("ID do dispositivo: ").strip()
             comando = input("Comando: ").strip()
@@ -57,16 +60,17 @@ def menu(args):
             kwargs = {}
             args_list = []
 
+            # Processa argumentos do comando
             if args_input:
                 for par in args_input.split():
                     if "=" in par:
                         k, v = par.split("=")
                         kwargs[k] = v
                     else:
-                        args_list.append(par)  
+                        args_list.append(par)
             hub.executar_comando(id_, comando, *args_list, **kwargs)
 
-
+        # Opção 4: altera o valor de um atributo de um dispositivo
         elif opcao == "4":
             id_ = input("ID do dispositivo: ").strip()
             atributo = input("Nome do atributo: ").strip()
@@ -78,39 +82,38 @@ def menu(args):
                         valor = int(valor)
                     setattr(disp, atributo, valor)
                     print(">> Atributo atualizado!")
+
                 except Exception as e:
                     print("!! Erro:", e)
             else:
                 print(">> Dispositivo ou atributo não encontrado.")
 
+        # Opção 5: executa uma rotina pré-definida
         elif opcao == "5":
             print("Rotinas disponíveis:", ", ".join(hub.rotinas.keys()))
             nome_rotina = input("Nome da rotina a executar: ").strip()
             hub.executar_rotina(nome_rotina)
 
-
+        # Opção 6: gera relatório dos dispositivos
         elif opcao == "6":
             print(">> Gerar relatório")
-            tipo_str = input("Filtrar por tipo (Tomada, Luz, Porta, ArCondicionado, Freeze, Umidificador) ou ENTER para todos: ").strip()
-            tipo_enum = None
-            if tipo_str:
-                try:
-                    tipo_enum = TipoDispositivo[tipo_str.upper()]
-                except KeyError:
-                    print(">> Tipo inválido, gerando relatório para todos.")
-                    tipo_enum = None
+            print("Tipos disponíveis: consumo, comandos, ar_semana, tempo_luz, mais_usados")
+            tipo = input("Tipo: ").strip().lower()
             arquivo = input("Nome do arquivo CSV (padrão: relatorio.csv): ").strip()
             if not arquivo:
                 arquivo = "relatorio.csv"
-            hub.gerar_relatorio(arquivo=arquivo, tipo=tipo_enum)
+            if not arquivo.startswith("data/"):
+                arquivo = "data/" + arquivo
+            hub.gerar_relatorio(arquivo=arquivo, tipo=tipo)
 
+        # Opção 7: salva a configuração atual em arquivo JSON
         elif opcao == "7":
             arquivo = input("Nome do arquivo para salvar (ex: config.json): ").strip()
             if not arquivo:
                 arquivo = "config.json"
             hub.salvar_config(arquivo)
 
-
+        # Opção 8: adiciona um novo dispositivo ao Hub
         elif opcao == "8":
             print(">> Adicionar dispositivo")
             tipo = input("Tipo (Tomada, Porta, Luz, Freeze, Umidificador, ArCondicionado): ").strip()
@@ -120,10 +123,8 @@ def menu(args):
             dispositivo = None
             if tipo.lower() == "tomada":
                 potencia = int(input("Potência (W): ").strip())
-               
                 dispositivo = Smartplug(id_, nome, potencia_w=potencia)
             elif tipo.lower() == "porta":
-                
                 dispositivo = Port(id_, nome)
             elif tipo.lower() == "luz":
                 dispositivo = Ligth(id_, nome)
@@ -137,12 +138,12 @@ def menu(args):
                 dispositivo = AirConditioner(id_, nome)
             else:
                 print(">> Tipo inválido.")
-            
+
             if dispositivo:
                 hub.adicionar_dispositivo(dispositivo)
                 print(f">> Dispositivo '{nome}' adicionado com sucesso!")
 
-
+        # Opção 9: remove um dispositivo do Hub
         elif opcao == "9":
             id_ = input("ID do dispositivo: ").strip()
             if id_ in hub.dispositivos:
@@ -151,14 +152,16 @@ def menu(args):
             else:
                 print(">> Dispositivo não encontrado.")
 
+        # Opção 10: encerra o programa
         elif opcao == "10":
             print("saindo...")
             break
 
+        # Opção inválida: qualquer outra entrada
         else:
             print(">> Opção inválida.")
 
-
+# Ponto de entrada do programa
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()  # Cria um parser para ler argumentos do terminal
     parser.add_argument("--config", help="Arquivo JSON de configuração", default=None) # Define o argumento opcional --config (ex: python app.py --config data/config.json)
