@@ -7,9 +7,10 @@ from smart_home.dispositivos.ar_condicionado import AirConditioner
 from smart_home.dispositivos.geladeira import Freeze  
 from smart_home.dispositivos.luz import Ligth  
 from smart_home.dispositivos.umidificador import Humidifier 
-from smart_home.core.dispositivos import TipoDispositivo 
 
-# Exemplo de execução: python -m smart_home.core.cli --config data/config.json
+from smart_home.core.erros import TransicaoInvalida
+
+
 
 
 def menu(args):
@@ -55,12 +56,58 @@ def menu(args):
         # Opção 3: executa um comando em um dispositivo
         elif opcao == "3":
             id_ = input("ID do dispositivo: ").strip()
+            disp = hub.dispositivos.get(id_)
+            if not disp:
+                print(">> Dispositivo não encontrado.")
+                continue
+
+            # Mostra comandos disponíveis se tiver máquina de estados
+            if hasattr(disp, "machine"):
+                comandos = sorted(disp.machine.events.keys())
+                print(f"Comandos disponíveis para {disp.nome} ({disp.tipo.value}): {', '.join(comandos)}")
+
             comando = input("Comando: ").strip()
-            args_input = input("Argumentos (k=v separados por espaço ou apenas valor único) ou ENTER: ").strip()
+
+            # Dicionário de sugestões de argumento por dispositivo e trigger
+            dicas = {
+                AirConditioner: {
+                    "ajustar_temperatura": "16-30",
+                    "mudar_modo": "FRIO ou QUENTE"
+                },
+                Freeze: {
+                    "ajustar_temperatura": "0-10",
+                    "mudar_modo": "ECO ou TURBO"
+                },
+                Ligth: {
+                    "definir_brilho": "0-100",
+                    "definir_cor": "QUENTE, FRIA ou NEUTRA"
+                },
+                Smartplug: {
+                    "ligar": "nenhum argumento necessário",
+                    "desligar": "nenhum argumento necessário"
+                },
+                Port: {
+                    "abrir": "nenhum argumento necessário",
+                    "fechar": "nenhum argumento necessário",
+                    "trancar": "nenhum argumento necessário",
+                    "destrancar": "nenhum argumento necessário"
+                },
+                Humidifier: {
+                    "ajustar_intensidade": "0-100",
+                    "reabastecer": "0-100"
+                }
+            }
+
+            # Mostra dica se existir
+            for cls, triggers in dicas.items():
+                if isinstance(disp, cls) and comando in triggers:
+                    print(f">> Sugestão de argumento para '{comando}': {triggers[comando]}")
+                    break
+
+            args_input = input("Argumentos (apenas valor único) ou ENTER: ").strip()
             kwargs = {}
             args_list = []
 
-            # Processa argumentos do comando
             if args_input:
                 for par in args_input.split():
                     if "=" in par:
@@ -68,7 +115,14 @@ def menu(args):
                         kwargs[k] = v
                     else:
                         args_list.append(par)
-            hub.executar_comando(id_, comando, *args_list, **kwargs)
+
+            try:
+                hub.executar_comando(id_, comando, *args_list, **kwargs)
+            except TransicaoInvalida as e:
+                print(f">> Atenção: {e}")
+            except Exception as e:
+                print(f">> Erro inesperado: {e}")
+
 
         # Opção 4: altera o valor de um atributo de um dispositivo
         elif opcao == "4":
@@ -158,9 +212,12 @@ def menu(args):
             salvar = input("Deseja salvar agora? (s/n): ").strip().lower()
 
             if salvar == "s":
+                arquivo_padrao = "config.json"
                 while True:
-                    arquivo = input("Nome do arquivo para salvar (deve terminar com .json): ").strip()
-                    if arquivo and arquivo.endswith(".json"):
+                    arquivo = input(f"Nome do arquivo para salvar (pressione ENTER para '{arquivo_padrao}'): ").strip()
+                    if not arquivo:
+                        arquivo = arquivo_padrao
+                    if arquivo.endswith(".json"):
                         hub.salvar_config(arquivo)
                         break
                     else:

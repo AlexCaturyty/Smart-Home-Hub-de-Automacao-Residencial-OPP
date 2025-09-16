@@ -1,6 +1,7 @@
 from transitions import Machine
 from enum import Enum, auto
 from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
+from smart_home.core.erros import ValidacaoAtributo
 
 
 # ---------- Estados e Enums ----------
@@ -28,9 +29,9 @@ class BrilhoDescriptor:
         try:
             valor = int(value)
         except (ValueError, TypeError):
-            raise ValueError("O brilho deve ser um número entre 0 e 100")
+            raise ValidacaoAtributo("brightness", value, "O brilho deve ser um número entre 0 e 100")
         if not (0 <= valor <= 100):
-            raise ValueError("O brilho deve estar entre 0 e 100")
+            raise ValidacaoAtributo("brightness", valor, "O brilho deve estar entre 0 e 100")
         setattr(instance, self.private_name, valor)
 
 
@@ -51,9 +52,9 @@ class CorDescriptor:
             if value_up in Colors.__members__:
                 setattr(instance, self.private_name, Colors[value_up])
             else:
-                raise ValueError(f"Cor inválida: {value}")
+                raise ValidacaoAtributo("color", value, "Cor inválida: escolha QUENTE, FRIA ou NEUTRA")
         else:
-            raise ValueError(f"Cor inválida: {value}")
+            raise ValidacaoAtributo("color", value, "Cor inválida")
 
 
 # ---------- Classe principal ----------

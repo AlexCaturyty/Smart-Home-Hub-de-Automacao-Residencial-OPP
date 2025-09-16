@@ -725,3 +725,70 @@
 {'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
 {'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
 {'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': 'DispositivoAdicionado', 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': 'DispositivoAdicionado', 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': 'DispositivoAdicionado', 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': 'DispositivoAdicionado', 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': 'DispositivoAdicionado', 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': 'DispositivoAdicionado', 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'geladeira_id', 'tipo': 'Geladeira'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'f_id', 'tipo': 'Geladeira'}

@@ -1,2 +1,6 @@
 timestamp,id_dispositivo,nome_dispositivo,tipo_dispositivo,evento,estado,potencia_w,consumo_wh
-2025-09-15T20:14:29.167428,luz_id,luz,LUZ,ligar,luz_id | luz | Luz | Estado: ON | Brilho: 100% | Cor: neutra,,0
+2025-09-15T22:02:28.830366,luz_id,luz,LUZ,ligar,luz_id | luz | Luz | Estado: ON | Brilho: 100% | Cor: neutra,,0
+2025-09-15T22:02:47.162698,ar_quarto_id,condicionado,ARCONDICIONADO,ligar,ar_quarto_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio,,0
+2025-09-15T22:06:06.144815,ar_quarto_id,condicionado,ARCONDICIONADO,ajustar_temperatura,ar_quarto_id | condicionado | Ar Condicionado | Estado: ON | Temp: 25°C | Modo: frio,,0
+2025-09-15T22:06:25.103127,porta_id,porta_entrada,PORTA,destrancar,porta_id | porta_entrada | Porta | Estado: UNLOCKED | Tentativas inválidas: 2,,0
+2025-09-15T22:11:14.547503,porta_id,porta_entrada,PORTA,abrir,porta_id | porta_entrada | Porta | Estado: OPEN | Tentativas inválidas: 2,,0

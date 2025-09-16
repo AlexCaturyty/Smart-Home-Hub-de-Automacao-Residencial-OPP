@@ -156,10 +156,7 @@ Fluxos típicos:
   * Escolha tipo de relatório (ex.: consumo por tomada, tempo que cada luz ficou ligada, dispositivos mais usados).
   * Opções adicionais podem pedir período (data inicial/final).
 
-  
-
 ---
-
 ## Formato dos arquivos
 
 ### `configuracao.json` (exemplo)
@@ -286,11 +283,11 @@ Exemplo de linhas:
 
 ### Relatórios CSV
 
-Formato depende do relatório; ex. consumo por tomada:
+Formato depende do relatório; ex. tempo da luz ligada:
 
 ```
-id_dispositivo,total_wh,inicio_periodo,fim_periodo
-tomada_tv,240,2025-09-01T00:00:00,2025-09-01T23:59:59
+id_dispositivo,nome_dispositivo,tempo_ligado_min
+luz_id,luz,3.59
 ```
 
 ---

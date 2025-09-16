@@ -1,4 +1,4 @@
-
+from smart_home.core.erros import ConfigInvalida, TransicaoInvalida
 from smart_home.core.logger import LoggerCSV
 import csv
 from smart_home.core.persistencia import salvar_config, carregar_config
@@ -6,6 +6,8 @@ from datetime import datetime
 from transitions.core import MachineError
 from smart_home.core.relatorios import Relatorios
 from smart_home.dispositivos.tomada import Smartplug
+from smart_home.dispositivos.tomada import Smartplug  
+from smart_home.core.eventos import EventoHub, EventoDispositivo
 
 
 # Classe principal do sistema, representa o Hub central da casa
@@ -34,7 +36,7 @@ class Hub:
         self.dispositivos[dispositivo.id] = dispositivo
         # Notifica observadores sobre o novo dispositivo
         self.notificar({
-            "evento": "DispositivoAdicionado",
+            "evento": EventoHub.DISPOSITIVO_ADICIONADO,
             "id": dispositivo.id,
             "tipo": dispositivo.tipo.value
         })
@@ -55,9 +57,9 @@ class Hub:
 
         antes = disp.status()  # Status antes do comando
         try:
-            metodo(*args, **kwargs)  # Executa o comando
+            metodo(*args, **kwargs)  
         except MachineError as e:
-            print(f">> Comando '{comando}' não pôde ser executado no estado atual ({disp.state.name}).")
+            raise TransicaoInvalida(disp.nome, comando, disp.state.name) from e
         except Exception as e:
             print(f">> Erro ao executar comando: {e}")
         finally:
@@ -132,4 +134,7 @@ class Hub:
         salvar_config(self, arquivo)
 
     def carregar_config(self, arquivo="data/config.json"):
-        carregar_config(self, arquivo)
+        try:
+            carregar_config(self, arquivo)
+        except Exception as e:
+            raise ConfigInvalida(arquivo, str(e))
