@@ -8,7 +8,7 @@
       "id": "ar_quarto_id",
       "tipo": "ARCONDICIONADO",
       "nome": "condicionado",
-      "estado": "ON",
+      "estado": "OFF",
       "atributos": {
         "_temperature": 20,
         "temperature": 20
@@ -20,14 +20,14 @@
       "nome": "porta",
       "estado": "LOCKED",
       "atributos": {
-        "_invalid_attempts": 0
+        "_invalid_attempts": 2
       }
     },
     {
       "id": "umidificador_id",
       "tipo": "UMIDIFICADOR",
       "nome": "umidifi",
-      "estado": "ON",
+      "estado": "OFF",
       "atributos": {
         "_intensity": 5,
         "_water_level": 100
@@ -37,10 +37,19 @@
       "id": "tomada_id",
       "tipo": "TOMADA",
       "nome": "toma",
-      "estado": "OFF",
+      "estado": "ON",
       "atributos": {
-        "_potencia_w": 400,
-        "_consumption_wh": 60.925402388888884
+        "_potencia_w": 60,
+        "_consumption_wh": 160.9254023888889
+      }
+    },
+    {
+      "id": "luz_id",
+      "tipo": "LUZ",
+      "nome": "luz",
+      "estado": "ON",
+      "atributos": {
+        "_brightness": 100
       }
     }
   ],

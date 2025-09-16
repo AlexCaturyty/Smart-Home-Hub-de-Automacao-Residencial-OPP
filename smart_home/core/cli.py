@@ -13,7 +13,7 @@ from smart_home.core.erros import TransicaoInvalida
 
 
 
-def menu(args):
+def main(args):
     hub = Hub("Casa Exemplo")
     # Adiciona observadores para registrar eventos no console e em arquivo
     hub.registrar_observer(ConsoleObserver())
@@ -232,9 +232,7 @@ def menu(args):
 
 # Ponto de entrada do programa
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()  # Cria um parser para ler argumentos do terminal
-    parser.add_argument("--config", help="Arquivo JSON de configuração", default=None) # Define o argumento opcional --config (ex: python app.py --config data/config.json)
-    args = parser.parse_args() # Lê os argumentos passados no terminal (args.config acessa o valor)
-    menu(args)  # Executa o programa principal, passando os argumentos lidos
+     # Lê os argumentos passados no terminal (args.config acessa o valor)
+    main()  # Executa o programa principal, passando os argumentos lidos
 
 

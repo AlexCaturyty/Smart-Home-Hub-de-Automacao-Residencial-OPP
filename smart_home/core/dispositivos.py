@@ -17,7 +17,7 @@ class Dispositivo(ABC):
         self.id = id_
         self.nome = nome
         self.tipo = tipo
-
+        
 # -------- Status sobre os dispositios -----------------------------
     @abstractmethod
     def status(self):

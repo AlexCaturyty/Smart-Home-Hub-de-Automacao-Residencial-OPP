@@ -60,7 +60,7 @@ def salvar_config(self, arquivo="data/config.json"):
 
 # Função para carregar configuração do hub a partir de um arquivo JSON
 def carregar_config(self, arquivo="config.json"):
-    
+
     with open(arquivo, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -75,6 +75,7 @@ def carregar_config(self, arquivo="config.json"):
         nome = d["nome"]
         tipo = d["tipo"]  # Tipo do dispositivo
         atributos = d.get("atributos", {})
+        estado_salvo = d.get("estado")  # <- pega estado do JSON
 
         try:
             tipo_enum = TipoDispositivo[tipo]  # Converte string para enum
@@ -104,6 +105,19 @@ def carregar_config(self, arquivo="config.json"):
             if attr == 'moment_on':
                 continue
             setattr(dispositivo, attr, valor)
+
+        # Restaura estado salvo (se existir e o dispositivo usar máquina de estados)
+        if estado_salvo and hasattr(dispositivo, "machine"):
+            try:
+                # Converte string do estado para Enum correto
+                if hasattr(dispositivo.state, "name"):  # Se o estado é Enum
+                    estado_enum = type(dispositivo.state)[estado_salvo]
+                    dispositivo.machine.set_state(estado_enum)
+                else:
+                    # fallback caso o estado não seja Enum
+                    dispositivo.machine.set_state(estado_salvo)
+            except Exception as e:
+                print(f"[AVISO] Não foi possível restaurar estado '{estado_salvo}' para {id_}: {e}")
 
         # Adiciona o dispositivo ao hub
         self.adicionar_dispositivo(dispositivo)

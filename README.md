@@ -111,7 +111,7 @@ python -m smart_home.main
 Você pode passar um arquivo de configuração customizado:
 
 ```bash
-python -m smart_home.main --config data/configuracao.json
+python -m smart_home.main --config data/config.json
 ```
 
 Ao iniciar, o Hub carrega a `configuracao.json` (se existir) e o `eventos.csv` é usado como log (ou criado quando houver o primeiro evento). Ao sair, a configuração atual é salva.
