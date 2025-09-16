@@ -55,7 +55,7 @@ def main(args):
 
         # Opção 3: executa um comando em um dispositivo
         elif opcao == "3":
-            id_ = input("ID do dispositivo: ").strip()
+            id_ = input("ID do dispositivo: ").strip().lower()
             disp = hub.dispositivos.get(id_)
             if not disp:
                 print(">> Dispositivo não encontrado.")
@@ -66,7 +66,7 @@ def main(args):
                 comandos = sorted(disp.machine.events.keys())
                 print(f"Comandos disponíveis para {disp.nome} ({disp.tipo.value}): {', '.join(comandos)}")
 
-            comando = input("Comando: ").strip()
+            comando = input("Comando: ").strip().lower()
 
             # Dicionário de sugestões de argumento por dispositivo e trigger
             dicas = {
@@ -126,9 +126,9 @@ def main(args):
 
         # Opção 4: altera o valor de um atributo de um dispositivo
         elif opcao == "4":
-            id_ = input("ID do dispositivo: ").strip()
-            atributo = input("Nome do atributo: ").strip()
-            valor = input("Novo valor: ").strip()
+            id_ = input("ID do dispositivo: ").strip().lower()
+            atributo = input("Nome do atributo: ").strip().lower()
+            valor = input("Novo valor: ").strip().lower()
             disp = hub.dispositivos.get(id_)
             if disp and hasattr(disp, atributo):
                 try:
@@ -170,9 +170,12 @@ def main(args):
         # Opção 8: adiciona um novo dispositivo ao Hub
         elif opcao == "8":
             print(">> Adicionar dispositivo")
-            tipo = input("Tipo (Tomada, Porta, Luz, Freeze, Umidificador, ArCondicionado): ").strip()
-            id_ = input("ID do dispositivo: ").strip()
-            nome = input("Nome do dispositivo: ").strip()
+            tipo_input = input("Tipos disponíveis(Tomada, Porta, Luz, Freeze, Umidificador, ArCondicionado)\n").strip()
+            tipo = tipo_input.lower()
+            id_input = input("ID do dispositivo: ").strip()
+            id_ = id_input.lower()
+            nome_input = input("Nome do dispositivo: ").strip()
+            nome = nome_input.lower()
 
             dispositivo = None
             if tipo.lower() == "tomada":

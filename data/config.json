@@ -51,6 +51,16 @@
       "atributos": {
         "_brightness": 100
       }
+    },
+    {
+      "id": "tomada_casa_id",
+      "tipo": "TOMADA",
+      "nome": "nome_tomada",
+      "estado": "OFF",
+      "atributos": {
+        "_potencia_w": 120,
+        "_consumption_wh": 0.0
+      }
     }
   ],
   "rotinas": {

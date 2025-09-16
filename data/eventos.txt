@@ -1016,3 +1016,54 @@
 {'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
 {'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
 {'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'LUX_ID', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_casa_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_casa_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_casa_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_casa_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'ar_quarto_id', 'tipo': 'Ar Condicionado'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'porta_id', 'tipo': 'Porta'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'umidificador_id', 'tipo': 'Umidificador'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_id', 'tipo': 'Tomada'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'luz_id', 'tipo': 'Luz'}
+{'evento': <EventoHub.DISPOSITIVO_ADICIONADO: 1>, 'id': 'tomada_casa_id', 'tipo': 'Tomada'}
