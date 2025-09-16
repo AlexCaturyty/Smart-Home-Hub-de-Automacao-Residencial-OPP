@@ -109,8 +109,12 @@ class Hub:
             id_ = cmd["id"]
             comando = cmd["comando"]
             args = cmd.get("argumentos", {})
-            self.executar_comando(id_, comando, **args)
-
+            try:
+                self.executar_comando(id_, comando, **args)
+            except TransicaoInvalida as e:
+                print(f">> Atenção: {e}")
+            except Exception as e:
+                print(f">> Erro inesperado: {e}")
     # ------------ Relatório ---------------
     def gerar_relatorio(self, arquivo="data/eventos.csv", tipo=None):
         rel = Relatorios()

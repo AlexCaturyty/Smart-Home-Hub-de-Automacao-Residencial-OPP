@@ -1,4 +1,1 @@
 timestamp,id_dispositivo,nome_dispositivo,tipo_dispositivo,evento,estado,potencia_w,consumo_wh
-2025-09-16T10:35:24.450360,umidificador_id,umidifi,UMIDIFICADOR,ligar,umidificador_id | umidifi | Umidificador | Estado: ON | Água: 100% | Intensidade: 5%,,0
-2025-09-16T10:35:24.450360,ar_quarto_id,condicionado,ARCONDICIONADO,ligar,ar_quarto_id | condicionado | Ar Condicionado | Estado: ON | Temp: 20°C | Modo: frio,,0
-2025-09-16T10:35:24.450360,luz_id,luz,LUZ,desligar,luz_id | luz | Luz | Estado: OFF | Brilho: 100% | Cor: neutra,,0
