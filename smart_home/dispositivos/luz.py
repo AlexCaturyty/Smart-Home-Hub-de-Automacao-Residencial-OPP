@@ -2,6 +2,8 @@ from transitions import Machine
 from enum import Enum, auto
 from smart_home.core.dispositivos import Dispositivo, TipoDispositivo
 
+
+# ---------- Estados e Enums ----------
 class StateLigth(Enum):
     OFF = auto()
     ON = auto()
@@ -11,15 +13,60 @@ class Colors(Enum):
     FRIA = "fria"
     NEUTRA = "neutra"
 
+
+# ---------- Descritores ----------
+class BrilhoDescriptor:
+    def __set_name__(self, owner, name):
+        self.private_name = '_' + name
+    
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        return getattr(instance, self.private_name, 0)
+
+    def __set__(self, instance, value):
+        try:
+            valor = int(value)
+        except (ValueError, TypeError):
+            raise ValueError("O brilho deve ser um número entre 0 e 100")
+        if not (0 <= valor <= 100):
+            raise ValueError("O brilho deve estar entre 0 e 100")
+        setattr(instance, self.private_name, valor)
+
+
+class CorDescriptor:
+    def __set_name__(self, owner, name):
+        self.private_name = '_' + name
+    
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        return getattr(instance, self.private_name, Colors.NEUTRA)
+
+    def __set__(self, instance, value):
+        if isinstance(value, Colors):
+            setattr(instance, self.private_name, value)
+        elif isinstance(value, str):
+            value_up = value.upper()
+            if value_up in Colors.__members__:
+                setattr(instance, self.private_name, Colors[value_up])
+            else:
+                raise ValueError(f"Cor inválida: {value}")
+        else:
+            raise ValueError(f"Cor inválida: {value}")
+
+
+# ---------- Classe principal ----------
 class Ligth(Dispositivo):
+    brightness = BrilhoDescriptor()
+    color = CorDescriptor()
+
     def __init__(self, id_: str, nome: str):
         super().__init__(id_, nome, TipoDispositivo.LUZ)
-        self._brightness = 0
-        self._color = Colors.NEUTRA
-        self._pending_brightness = None
-        self._pending_color = None
+        self.brightness = 0
+        self.color = Colors.NEUTRA
 
-        # Máquina de estados com transições
+        # Máquina de estados
         self.machine = Machine(
             model=self,
             states=StateLigth,
@@ -41,50 +88,18 @@ class Ligth(Dispositivo):
         self.desligar()
 
     def status(self):
-        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Brilho: {self._brightness}% | Cor: {self._color.value}"
+        return f"{self.id} | {self.nome} | {self.tipo.value} | Estado: {self.state.name} | Brilho: {self.brightness}% | Cor: {self.color.value}"
 
-    # ------------- Propriedades -----------------------
-    @property
-    def brightness(self):
-        return self._brightness
-
-    @brightness.setter
-    def brightness(self, valor):
-        try:
-            valor_int = int(valor)
-            if 0 <= valor_int <= 100:
-                self._brightness = valor_int
-                print(f">> Brilho definido para {self._brightness}%.")
-            else:
-                print(f">> Brilho inválido: {valor}. Deve estar entre 0 e 100.")
-        except (ValueError, TypeError):
-            print(f">> Brilho inválido: {valor}. Informe um número entre 0 e 100.")
-
-    @property
-    def color(self):
-        return self._color
-
-    @color.setter
-    def color(self, value):
-        try:
-            if isinstance(value, Colors):
-                self._color = value
-            elif isinstance(value, str) and value.upper() in Colors.__members__:
-                self._color = Colors[value.upper()]
-            else:
-                raise ValueError(f">> Cor inválida: {value}")
-            print(f">> Cor definida para {self._color.value.upper()}")
-        except Exception as e:
-            print(e)
-
-    # -------- Métodos auxiliares para a máquina --------
+    # -------- Métodos auxiliares da máquina --------
     def apply_brightness(self, valor=None, **kwargs):
         if valor is not None:
             self.brightness = valor
+            print(f">> Brilho definido para {self.brightness}%")
 
     def apply_color(self, valor=None, **kwargs):
         if valor is not None:
             self.color = valor
+            print(f">> Cor definida para {self.color.value}")
 
     # -------- Callbacks da máquina --------
     def on_enter_ON(self, *args, **kwargs):

@@ -5,7 +5,7 @@
   },
   "dispositivos": [
     {
-      "id": "ar_id",
+      "id": "ar_quarto_id",
       "tipo": "ARCONDICIONADO",
       "nome": "condicionado",
       "estado": "OFF",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "f",
+      "id": "geladeira_id",
       "tipo": "GELADEIRA",
       "nome": "freze",
       "estado": "OFF",
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "u",
+      "id": "umidificador_id",
       "tipo": "UMIDIFICADOR",
       "nome": "umidifi",
       "estado": "OFF",
@@ -44,32 +44,43 @@
       }
     },
     {
-      "id": "t",
+      "id": "tomada_id",
       "tipo": "TOMADA",
       "nome": "toma",
       "estado": "OFF",
       "atributos": {
         "_potencia_w": 400,
-        "_consumption_wh": 7.094241277777778
+        "_consumption_wh": 15.140979388888889
+      }
+    },
+    {
+      "id": "luz_id",
+      "tipo": "LUZ",
+      "nome": "luz",
+      "estado": "OFF",
+      "atributos": {
+        "_brightness": 100,
+        "_pending_brightness": null,
+        "_pending_color": null
       }
     }
   ],
   "rotinas": {
-    "modo_noite": [
+    "modo_frio": [
       {
-        "id": "luz_sala",
-        "comando": "desligar"
+        "id": "umidificador_id",
+        "comando": "ligar"
       },
       {
-        "id": "ar_quarto",
+        "id": "ar_quarto_id",
         "comando": "ligar",
         "argumentos": {
-          "temperatura": 22
+          "temperatura": 16
         }
       },
       {
-        "id": "porta_entrada",
-        "comando": "fechar"
+        "id": "luz_id",
+        "comando": "desligar"
       }
     ],
     "acordar": [

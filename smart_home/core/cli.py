@@ -154,7 +154,19 @@ def menu(args):
 
         # Opção 10: encerra o programa
         elif opcao == "10":
-            print("saindo...")
+            print(">> Atenção: você precisa salvar antes de sair para não perder as alterações!")
+            salvar = input("Deseja salvar agora? (s/n): ").strip().lower()
+
+            if salvar == "s":
+                while True:
+                    arquivo = input("Nome do arquivo para salvar (deve terminar com .json): ").strip()
+                    if arquivo and arquivo.endswith(".json"):
+                        hub.salvar_config(arquivo)
+                        break
+                    else:
+                        print(">> Nome inválido! O arquivo precisa terminar com '.json'.")
+
+            print(">> Saindo...")
             break
 
         # Opção inválida: qualquer outra entrada

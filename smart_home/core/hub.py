@@ -16,10 +16,10 @@ class Hub:
         self.observers = []  # Lista de observadores para eventos
         self.logger = LoggerCSV()  # Logger para registrar eventos em CSV
         self.rotinas = {
-            "modo_noite": [
-                {"id": "luz_sala", "comando": "desligar"},
-                {"id": "ar_quarto", "comando": "ligar", "argumentos": {"temperatura": 22}},
-                {"id": "porta_entrada", "comando": "fechar"},
+            "modo_frio": [
+                {"id": "umidicador", "comando": "ligar"},
+                {"id": "ar_quarto", "comando": "ligar", "argumentos": {"temperatura": 16}},
+                {"id": "luz_id", "comando": "desligar"},
             ],
             "acordar": [
                 {"id": "luz_sala", "comando": "ligar"},
@@ -89,47 +89,47 @@ class Hub:
             print(d.status())
 
         # -------- OBSERVER --------
-        def registrar_observer(self, observer):
-            self.observers.append(observer)
+    def registrar_observer(self, observer):
+        self.observers.append(observer)
 
-        def notificar(self, evento):
-            for obs in self.observers:
-                obs.update(evento)
+    def notificar(self, evento):
+        for obs in self.observers:
+            obs.update(evento)
 
-        # -------- ROTINAS --------
-        def executar_rotina(self, nome):
-            comandos = self.rotinas.get(nome)
-            if not comandos:
-                print(f">> Rotina '{nome}' não encontrada.")
-                return
-            print(f">> Executando rotina '{nome}'...")
-            for cmd in comandos:
-                id_ = cmd["id"]
-                comando = cmd["comando"]
-                args = cmd.get("argumentos", {})
-                self.executar_comando(id_, comando, **args)
+    # -------- ROTINAS --------
+    def executar_rotina(self, nome):
+        comandos = self.rotinas.get(nome)
+        if not comandos:
+            print(f">> Rotina '{nome}' não encontrada.")
+            return
+        print(f">> Executando rotina '{nome}'...")
+        for cmd in comandos:
+            id_ = cmd["id"]
+            comando = cmd["comando"]
+            args = cmd.get("argumentos", {})
+            self.executar_comando(id_, comando, **args)
 
-        # ------------ Relatório ---------------
-        def gerar_relatorio(self, arquivo="data/eventos.csv", tipo=None):
-            rel = Relatorios()
-            if tipo == "consumo":
-                rel.consumo_por_tomada(arquivo)  
-            elif tipo == "comandos":
-                rel.comandos_por_tipo(arquivo)
-            elif tipo == "ar_semana":
-                rel.ar_condicionado_ligado_semana(arquivo)
-            elif tipo == "tempo_luz":
-                rel.tempo_luz_ligada(arquivo)
-            elif tipo == "mais_usados":
-                rel.dispositivos_mais_usados(arquivo)
-            else:
-                print(">> Tipo de relatório inválido.")
+    # ------------ Relatório ---------------
+    def gerar_relatorio(self, arquivo="data/eventos.csv", tipo=None):
+        rel = Relatorios()
+        if tipo == "consumo":
+            rel.consumo_por_tomada(arquivo)  
+        elif tipo == "comandos":
+            rel.comandos_por_tipo(arquivo)
+        elif tipo == "ar_semana":
+            rel.ar_condicionado_ligado_semana(arquivo)
+        elif tipo == "tempo_luz":
+            rel.tempo_luz_ligada(arquivo)
+        elif tipo == "mais_usados":
+            rel.dispositivos_mais_usados(arquivo)
+        else:
+            print(">> Tipo de relatório inválido.")
 
-                
+            
 
-        # -------- PERSISTÊNCIA --------
-        def salvar_config(self, arquivo="data/config.json"):
-            salvar_config(self, arquivo)
+    # -------- PERSISTÊNCIA --------
+    def salvar_config(self, arquivo="data/config.json"):
+        salvar_config(self, arquivo)
 
-        def carregar_config(self, arquivo="data/config.json"):
-            carregar_config(self, arquivo)
+    def carregar_config(self, arquivo="data/config.json"):
+        carregar_config(self, arquivo)
