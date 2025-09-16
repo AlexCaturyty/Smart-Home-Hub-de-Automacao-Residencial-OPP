@@ -1,6 +1,7 @@
 import csv
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
+from functools import reduce
 
 class Relatorios:
     def __init__(self, arquivo="data/eventos.csv"):
@@ -12,17 +13,19 @@ class Relatorios:
             return list(reader)
 
     # ---------------- Relatórios ----------------
-    
     # 1. Consumo por tomada inteligente
     def consumo_por_tomada(self, arquivo_saida="relatorio_consumo.csv"):
         eventos = self._ler_eventos()
         tomadas = [e for e in eventos if e["tipo_dispositivo"].lower() == "tomada"]
 
-        consumo_por_disp = {}
-        for t in tomadas:
-            id_ = t["id_dispositivo"]
-            wh = float(t.get("consumo_wh", 0) or 0)
-            consumo_por_disp[id_] = consumo_por_disp.get(id_, 0) + wh
+        # Usa reduce para somar o consumo de cada dispositivo
+        def soma_consumo(acumulador, evento):
+            id_ = evento["id_dispositivo"]
+            wh = float(evento.get("consumo_wh", 0) or 0)
+            acumulador[id_] = acumulador.get(id_, 0) + wh
+            return acumulador
+
+        consumo_por_disp = reduce(soma_consumo, tomadas, {}) # < ------------
 
         with open(arquivo_saida, "w", newline="") as f:
             writer = csv.writer(f)
@@ -32,6 +35,7 @@ class Relatorios:
                 writer.writerow([id_, nome, round(total, 2)])
 
         print(f">> Relatório de consumo por tomada salvo em {arquivo_saida}")
+
 
     # 2. Tempo total em que cada luz permaneceu ligada
     def tempo_luz_ligada(self, arquivo_saida="relatorio_tempo_luz.csv"):
@@ -50,7 +54,7 @@ class Relatorios:
                     ultimo_ligar = datetime.fromisoformat(e["timestamp"])
                 elif e["evento"] == "desligar" and ultimo_ligar:
                     ts = datetime.fromisoformat(e["timestamp"])
-                    tempo_total += (ts - ultimo_ligar).total_seconds() / 60  # minutos
+                    tempo_total += (ts - ultimo_ligar).total_seconds() / 60  
                     ultimo_ligar = None
 
             resultado[luz] = round(tempo_total, 2)
@@ -70,7 +74,7 @@ class Relatorios:
         hoje = datetime.now()
         sete_dias = hoje - timedelta(days=7)
 
-        ar_eventos = filter(lambda e: "ar" in e["id_dispositivo"].lower() and e["evento"] == "ligar", eventos)
+        ar_eventos = filter(lambda e: "ar" in e["id_dispositivo"].lower() and e["evento"] == "ligar", eventos) # < --------------
         contagem = {}
         for e in ar_eventos:
             ts = datetime.fromisoformat(e["timestamp"])
@@ -89,7 +93,7 @@ class Relatorios:
     # 4. Dispositivos mais usados
     def dispositivos_mais_usados(self, arquivo_saida="relatorio_mais_usados.csv"):
         eventos = self._ler_eventos()
-        contagem = Counter(map(lambda e: e["id_dispositivo"], eventos))
+        contagem = Counter(map(lambda e: e["id_dispositivo"], eventos)) # < --------------
         mais_usados = sorted(contagem.items(), key=lambda x: x[1], reverse=True)
 
         with open(arquivo_saida, "w", newline="") as f:
