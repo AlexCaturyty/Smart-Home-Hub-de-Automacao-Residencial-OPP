@@ -1,6 +1,6 @@
 # Smart Home Hub (Hub de Automação Residencial)
 
-Este projeto é um sistema de automação residencial em Python chamado **Smart Home Hub**. Ele gerencia dispositivos inteligentes (luzes, portas, tomadas, alarmes, TVs, ar-condicionado, etc.) via **CLI** e aplica conceitos de POO, padrões de projeto, FSM (`transitions`), descritores, exceções, I/O (JSON/CSV) e programação funcional.
+Este projeto é um sistema de automação residencial em Python chamado **Smart Home Hub**. Ele gerencia dispositivos inteligentes (luzes, portas, tomadas, umidificador, ar-condicionado, etc.) via **CLI** e aplica conceitos de POO, padrões de projeto, FSM (`transitions`), descritores, exceções, I/O (JSON/CSV) e programação funcional.
 
 ---
 
